@@ -1,0 +1,22 @@
+default: &default
+  adapter: <%= ENV['DB_ADAPTER'] || 'mysql2' %>
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
+  host: 127.0.0.1
+  port: 3307
+  pool: 5
+  reconnect: true
+  variables:
+    sql_mode: 'traditional'
+
+development: &development
+  <<: *default
+  database: result_analyzer_development
+  username: <%= ENV['USERNAME'] || 'root' %>
+  password:
+
+test: &test
+  <<: *default
+  database: result_analyzer_test
+  username: <%= ENV['USERNAME'] || 'root' %>
+  password:

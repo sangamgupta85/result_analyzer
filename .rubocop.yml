@@ -1,0 +1,111 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - spec/dummy/**/*
+  DisplayCopNames: true
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 5.2
+  Include:
+    - "**/*.rb"
+    - Gemfile
+    - Rakefile
+
+Rails:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - config/routes.rb
+    - config/initializers/*
+    - lib/tasks/**/*
+
+Metrics/ClassLength:
+  Max: 200
+
+Layout/LineLength:
+  Max: 120
+  IgnoreCopDirectives: true
+  IgnoredPatterns:
+    - '[''"][0-9a-f]{128}[''"]'
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - db/migrate/*
+
+Naming/PredicateName:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 3
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Rails/Date:
+  Exclude:
+    - spec/**/*
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/HttpPositionalArguments:
+  Exclude:
+    - spec/**/*
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Security/YAMLLoad:
+  AutoCorrect: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
