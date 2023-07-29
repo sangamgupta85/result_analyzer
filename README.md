@@ -4,7 +4,7 @@
 
 This application works with test results and perform EOD and monthly calculations on the test results received.
 * Students give online tests.
-* A third party service, submits the test results to our rails app when a test is submitted by a student.
+* A third party service, submits the test results to the rails app when a test is submitted by a student.
 * We store these test results.
 * Every day at 6 PM, our app performs the following EOD tasks:
     - Aggregates all the collected results for a day and calculates daily result stats.
@@ -24,23 +24,23 @@ To run the application in development environment you need to have following sof
 
 Clone the repo using below commands.
 ```
-$ git clone
+$ git clone git@github.com:sangamgupta85/result_analyzer.git
 $ cd result_analyzer
 $ bundle install
 $ rails db:prepare
-```
-
-### Services
-
-Run cron job to compute EOD tasks.
-```
-$ whenever --update-crontab
 ```
 
 ### Run dev server
 
 ```
 bundle exec rails s
+```
+
+### Service
+
+Run cron job to compute EOD tasks.
+```
+$ whenever --update-crontab
 ```
 
 ### Sample curl request to submit test results
@@ -64,20 +64,7 @@ open spec/coverage/index.html
 
 ### Additional Information
 
+* Test coverage is 100% and can be found under spec/coverage.
 * Whenever gem is used to compute EOD tasks via cron job.
 * To view all current cron jobs use: ```crontab -l```
 * You can also clear your crontab by running this: ```whenever --clear-crontab```
-
-
-
-
-
-
-
-
-
-
-
-
-Things you may want to cover:
-Add repo url also above

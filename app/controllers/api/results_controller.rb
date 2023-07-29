@@ -5,9 +5,9 @@ class Api::ResultsController < ApplicationController
     result = Result.new(result_params)
 
     if result.save
-      render json: { message: 'Submitted successfully' }, status: :created
+      api_response(::ResultPresenter.new, status: :created)
     else
-      render json: result.errors, status: :unprocessable_entity
+      api_response(result.errors, status: :unprocessable_entity)
     end
   end
 

@@ -12,11 +12,11 @@ default: &default
 development: &development
   <<: *default
   database: result_analyzer_development
-  username: <%= ENV['USERNAME'] || 'root' %>
+  username: <%= ENV['USERNAME'] || 'default' %>
   password:
 
 test: &test
   <<: *default
   database: result_analyzer_test
-  username: <%= ENV['USERNAME'] || 'root' %>
+  username: <%= ENV['USERNAME'] || 'default' %>
   password:
